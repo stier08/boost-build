@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<project name="boost-zip" default="zip" basedir=".">
+	 <tstamp>
+    <format property="yyyymmdd" pattern="yyyyMMdd" locale="en,GB"/>
+  </tstamp>
+  <property name="python.version.major" value="3"/>
+  <property name="python.version.minor" value="5"/>
+
+  <property name="boost.version.major" value="1"/>
+  <property name="boost.version.minor" value="63"/>
+  <property name="boost.version.low" value="0"/>
+  <property name="vs.version.name" value="0"/>
+	<property name="boost.root" location="D:\LIBS\boost\boost-${boost.version.major}_${boost.version.minor}_${boost.version.low}_${vs.version.name}_wp${python.version.major}${python.version.minor}"/>
+
+
+	<property name="python.home.dir" location="D:\Soft\Python\35\WinPython-32bit-3.5.3.0Zero\python-3.5.3"/>
+	<property name="vs.main.version" value="14.0"/>
+
+	<property name="boost.biuld.dir" location="${boost.root}/build"/>
+  <property name="boost.target.dir" location="${boost.root}"/>
+  <property name="boost.prefix.dir" location="${boost.target.dir}"/>
+  <property name="boost.include.dir" location="${boost.target.dir}/include"/>
+  <property name="boost.lib.dir" location="${boost.target.dir}/lib"/>
+  
+
+  <property name="target.dir" location="."/>
+  <property name="target.zip.name" value="boost-${boost.version.major}_${boost.version.minor}_${boost.version.low}_${vs.version.name}_wp${python.version.major}${python.version.minor}"/>
+  <property name="target.zip.path" location="${target.dir}/${target.zip.name}.zip"/>
+  
+	<target name="zip">
+		<zip destfile="${target.zip.path}">
+			<zipfileset  dir="${boost.lib.dir}">
+				<include name="boost_python-*.lib"/>
+        <include name="boost_python-*.dll"/>
+			</zipfileset >
+			<zipfileset  dir="${python.home.dir}/libs">
+				<include name="python${python.version.major}${python.version.minor}.lib"/>
+			</zipfileset >
+		</zip>
+	</target>
+  
+  <target name="build-boost">
+    <exec executable="cmd.exe" dir="${boost.root}">
+        <arg value="/c" />
+        <arg value="bootstrap.bat" />
+    </exec>
+    <exec executable="cmd.exe" dir="${boost.root}">
+        <arg value="/c" />
+        <arg value="b2" />
+        <arg value="--build-dir=${boost.biuld.dir}" />
+        <arg value="--prefix=${boost.prefix.dir}" />
+        <arg value="--includedir=${boost.include.dir}" />
+        <arg value="--libdir=${boost.lib.dir}" />
+        <arg value="--build-type=complete" />
+        <arg value="link=shared" />
+        <arg value="toolset=msvc-${vs.main.version}" />
+        <arg value="stage" />
+        <arg value="install" />
+    </exec>
+    
+  </target>
+</project>
+
+
