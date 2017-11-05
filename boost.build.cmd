@@ -1,11 +1,11 @@
-rem set PATH=P:\WinPython-32bit-3.4.4.7Zero\python-3.4.4;P:\WinPython-32bit-3.4.4.7Zero\python-3.4.4\Scripts;%PATH%
-set PATH=P:\WinPython-32bit-3.6.2.0Zero\python-3.6.2;P:\WinPython-32bit-3.6.2.0Zero\python-3.6.2\Scripts;%PATH%
+set PATH=P:\WinPython-32bit-3.4.4.7Zero\python-3.4.4;P:\WinPython-32bit-3.4.4.7Zero\python-3.4.4\Scripts;%PATH%
+rem set PATH=P:\WinPython-32bit-3.6.2.0Zero\python-3.6.2;P:\WinPython-32bit-3.6.2.0Zero\python-3.6.2\Scripts;%PATH%
 rem set PATH=D:\Python34;D:\Python34\Scripts;%PATH%
 
 set VS150COMNTOOLS=C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\Tools\
 
 rem http://www.boost.org/build/doc/html/bbv2/overview/invocation.html
-set BOOST_ROOT=D:\LIBS\boost\boost-1_65_1_vs2017_wp36
+set BOOST_ROOT=D:\LIBS\boost\boost-1_65_1_vs2017_wp34
 set BOOST_BUILD_ROOT=%BOOST_ROOT%
 set BOOST_TARGET_ROOT=%BOOST_ROOT%
 set BOOST_BUILD_CONFIG=--debug-configuration  --debug-building --debug-generators -d 5
@@ -53,8 +53,7 @@ b2 ^
   threading=%BOOST_THEADING% ^
   runtime-link=%BOOST_RUNTIME_LINK% ^
   link=%BOOST_LINK% ^
-  toolset=msvc-%vsMainVersion% ^
-  %B2_DEFINES% ^
+  toolset=msvc-%vsMainVersion% %B2_DEFINES% ^
   stage install
 
 echo "===============Python Libraries Done========================================================="
