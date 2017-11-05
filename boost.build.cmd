@@ -1,5 +1,6 @@
-rem set PATH=P:\WinPython-32bit-3.4.4.7Zero\python-3.4.4;P:\WinPython-32bit-3.4.4.7Zero\python-3.4.4\Scripts;%PATH%
-set PATH=P:\WinPython-32bit-3.6.2.0Zero\python-3.6.2;P:\WinPython-32bit-3.6.2.0Zero\python-3.6.2\Scripts;%PATH%
+set PYTHONHOME=P:\WinPython-32bit-3.6.2.0Zero\python-3.6.2
+rem set PYTHONHOME=P:\WinPython-32bit-3.4.4.7Zero\python-3.4.4
+set PATH=%PYTHONHOME%;%PYTHONHOME%\Scripts;%PATH%
 rem set PATH=D:\Python34;D:\Python34\Scripts;%PATH%
 
 set VS150COMNTOOLS=C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\Tools\
@@ -8,8 +9,11 @@ rem http://www.boost.org/build/doc/html/bbv2/overview/invocation.html
 set BOOST_ROOT=D:\LIBS\boost\boost-1_65_1_vs2017_wp36
 set BOOST_BUILD_ROOT=%BOOST_ROOT%
 set BOOST_TARGET_ROOT=%BOOST_ROOT%
-set BOOST_BUILD_CONFIG=--debug-configuration  --debug-building --debug-generators -d 5
 set BOOST_BUILD_CONFIG=
+set BOOST_BUILD_CONFIG=--debug-configuration  --debug-building --debug-generators -d 2
+
+python -c "from sys import *; print('version=%d.%d\nplatform=%s\nprefix=%s\nexec_prefix=%s\nexecutable=%s' % (version_info[0],version_info[1],platform,prefix,exec_prefix,executable))" 2>&1
+
 
 call "%VS150COMNTOOLS%..\..\VC\Auxiliary\Build\vcvars32.bat"
 cd /d %BOOST_ROOT%
@@ -59,7 +63,6 @@ b2 ^
 
 echo "===============Python Libraries Done========================================================="
 
-exit 0
 
 echo "===============Building With test Libraries========================================================="
 b2 ^
