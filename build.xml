@@ -4,17 +4,16 @@
     <format property="yyyymmdd" pattern="yyyyMMdd" locale="en,GB"/>
   </tstamp>
   <property name="python.version.major" value="3"/>
-  <property name="python.version.minor" value="5"/>
+  <property name="python.version.minor" value="4"/>
 
   <property name="boost.version.major" value="1"/>
-  <property name="boost.version.minor" value="63"/>
-  <property name="boost.version.low" value="0"/>
-  <property name="vs.version.name" value="0"/>
+  <property name="boost.version.minor" value="65"/>
+  <property name="boost.version.low" value="1"/>
+  <property name="vs.version.name" value="vs2017"/>
 	<property name="boost.root" location="D:\LIBS\boost\boost-${boost.version.major}_${boost.version.minor}_${boost.version.low}_${vs.version.name}_wp${python.version.major}${python.version.minor}"/>
 
-
-	<property name="python.home.dir" location="D:\Soft\Python\35\WinPython-32bit-3.5.3.0Zero\python-3.5.3"/>
-	<property name="vs.main.version" value="14.0"/>
+	<property name="python.home.dir" location="P:\WinPython-32bit-3.4.4.7Zero\python-3.4.4"/>
+	<property name="vs.main.version" value="14.1"/>
 
 	<property name="boost.biuld.dir" location="${boost.root}/build"/>
   <property name="boost.target.dir" location="${boost.root}"/>
@@ -30,8 +29,8 @@
 	<target name="zip">
 		<zip destfile="${target.zip.path}">
 			<zipfileset  dir="${boost.lib.dir}">
-				<include name="boost_python-*.lib"/>
-        <include name="boost_python-*.dll"/>
+				<include name="boost_python3-*.lib"/>
+        <include name="boost_python3-*.dll"/>
 			</zipfileset >
 			<zipfileset  dir="${python.home.dir}/libs">
 				<include name="python${python.version.major}${python.version.minor}.lib"/>
