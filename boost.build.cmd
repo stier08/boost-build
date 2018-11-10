@@ -15,7 +15,7 @@ set BOOST_BUILD_CONFIG=--debug-configuration  --debug-building --debug-generator
 python -c "from sys import *; print('version=%d.%d\nplatform=%s\nprefix=%s\nexec_prefix=%s\nexecutable=%s' % (version_info[0],version_info[1],platform,prefix,exec_prefix,executable))" 2>&1
 
 
-call "%VS150COMNTOOLS%..\..\VC\Auxiliary\Build\vcvars32.bat"
+call "%VS140COMNTOOLS%..\..\VC\Auxiliary\Build\vcvars32.bat"
 cd /d %BOOST_ROOT%
 
 if exist b2.exe (
