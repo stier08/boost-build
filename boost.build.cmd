@@ -1,12 +1,12 @@
-set PYTHONHOME=P:\WinPython-32bit-3.6.2.0Zero\python-3.6.2
+set PYTHONHOME=%PORTABLE_APP_HOME%WinPython-32bit-3.7.1.0\python-3.7.1
 rem set PYTHONHOME=P:\WinPython-32bit-3.4.4.7Zero\python-3.4.4
 set PATH=%PYTHONHOME%;%PYTHONHOME%\Scripts;%PATH%
 rem set PATH=D:\Python34;D:\Python34\Scripts;%PATH%
 
-set VS150COMNTOOLS=C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\Tools\
+set VS140COMNTOOLS=D:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\Tools\
 
 rem http://www.boost.org/build/doc/html/bbv2/overview/invocation.html
-set BOOST_ROOT=D:\LIBS\boost\boost-1_65_1_vs2017_wp36
+set BOOST_ROOT=D:\LIBS\boost\boost_1_68_0_vs2015_wp37
 set BOOST_BUILD_ROOT=%BOOST_ROOT%
 set BOOST_TARGET_ROOT=%BOOST_ROOT%
 set BOOST_BUILD_CONFIG=
@@ -25,7 +25,7 @@ echo "b2.exe exists"
 )
 rem call bootstrap.bat
 
-set vsMainVersion=14.1
+set vsMainVersion=14.0
 set BuildDir=%BOOST_BUILD_ROOT%\build
 set PrefixDir=%BOOST_TARGET_ROOT%
 set IncludeDir=%BOOST_TARGET_ROOT%\include
@@ -80,7 +80,7 @@ b2 ^
   %B2_DEFINES% ^
   stage install
 
-exit 0
+goto exitlabel
 
 echo "===============Building With regex Libraries========================================================="
 b2 ^
