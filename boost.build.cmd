@@ -34,7 +34,7 @@ set LibDir=%BOOST_TARGET_ROOT%\lib
 set BOOST_THEADING=multi
 set BOOST_RUNTIME_LINK=shared
 rem (static|shared)
-set BOOST_LINK=static
+set BOOST_LINK=shared
 
 
 if "%BOOST_LINK%"=="static" (
