@@ -1,3 +1,4 @@
+rem https://stackoverflow.com/questions/2715164/how-can-i-decode-the-boost-library-naming
 set PYTHONHOME=%PORTABLE_APP_HOME%WinPython-32bit-3.7.1.0\python-3.7.1
 rem set PYTHONHOME=P:\WinPython-32bit-3.4.4.7Zero\python-3.4.4
 set PATH=%PYTHONHOME%;%PYTHONHOME%\Scripts;%PATH%
@@ -32,6 +33,7 @@ set PrefixDir=%BOOST_TARGET_ROOT%
 set IncludeDir=%BOOST_TARGET_ROOT%\include
 set LibDir=%BOOST_TARGET_ROOT%\lib
 set BOOST_THEADING=multi
+rem https://stackoverflow.com/questions/7508369/boost-libs-building-difference-between-runtime-link-and-link-options
 set BOOST_RUNTIME_LINK=shared
 rem (static|shared)
 set BOOST_LINK=shared
@@ -56,7 +58,7 @@ b2 ^
   --build-type=complete ^
   %BOOST_BUILD_CONFIG% ^
   architecture=%BOOST_ARCHITECTURE% ^
-  address-model=%BOOST_ADDRESS_MODEL% ^ 
+  address-model=%BOOST_ADDRESS_MODEL% ^
   threading=%BOOST_THEADING% ^
   runtime-link=%BOOST_RUNTIME_LINK% ^
   link=%BOOST_LINK% ^
@@ -76,7 +78,7 @@ b2 ^
   --build-type=complete ^
   %BOOST_BUILD_CONFIG% ^
   architecture=%BOOST_ARCHITECTURE% ^
-  address-model=%BOOST_ADDRESS_MODEL% ^ 
+  address-model=%BOOST_ADDRESS_MODEL% ^
   threading=%BOOST_THEADING% ^
   runtime-link=%BOOST_RUNTIME_LINK% ^
   link=%BOOST_LINK% ^
@@ -87,6 +89,7 @@ b2 ^
 goto exitlabel
 
 echo "===============Building With regex Libraries========================================================="
+
 b2 ^
   --build-dir=%BuildDir% ^
   --prefix=%PrefixDir% ^
@@ -96,7 +99,7 @@ b2 ^
   --build-type=complete ^
   %BOOST_BUILD_CONFIG% ^
   architecture=%BOOST_ARCHITECTURE% ^
-  address-model=%BOOST_ADDRESS_MODEL% ^ 
+  address-model=%BOOST_ADDRESS_MODEL% ^
   threading=%BOOST_THEADING% ^
   runtime-link=%BOOST_RUNTIME_LINK% ^
   link=%BOOST_LINK% ^
@@ -115,7 +118,7 @@ b2 ^
   --without-mpi ^
   %BOOST_BUILD_CONFIG% ^
   architecture=%BOOST_ARCHITECTURE% ^
-  address-model=%BOOST_ADDRESS_MODEL% ^ 
+  address-model=%BOOST_ADDRESS_MODEL% ^
   threading=%BOOST_THEADING% ^
   runtime-link=%BOOST_RUNTIME_LINK% ^
   link=%BOOST_LINK% ^
