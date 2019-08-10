@@ -6,7 +6,7 @@ rem set PATH=D:\Python34;D:\Python34\Scripts;%PATH%
 set VS140COMNTOOLS=D:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\Tools\
 
 rem http://www.boost.org/build/doc/html/bbv2/overview/invocation.html
-set BOOST_ROOT=D:\LIBS\boost\boost_1_68_0_vs2015_wp37
+set BOOST_ROOT=D:\LIBS\boost\boost-1_68_0_vs2015_wp37
 set BOOST_BUILD_ROOT=%BOOST_ROOT%
 set BOOST_TARGET_ROOT=%BOOST_ROOT%
 set BOOST_BUILD_CONFIG=
@@ -33,7 +33,7 @@ set LibDir=%BOOST_TARGET_ROOT%\lib
 set BOOST_THEADING=multi
 set BOOST_RUNTIME_LINK=shared
 rem (static|shared)
-set BOOST_LINK=shared
+set BOOST_LINK=static
 
 
 if "%BOOST_LINK%"=="static" (
@@ -51,7 +51,7 @@ b2 ^
   --prefix=%PrefixDir% ^
   --includedir=%IncludeDir% ^
   --libdir=%LibDir% ^
-  --with-python ^
+  --with-date_time ^
   --build-type=complete ^
   %BOOST_BUILD_CONFIG% ^
   threading=%BOOST_THEADING% ^
@@ -62,7 +62,8 @@ b2 ^
   stage install
 
 echo "===============Python Libraries Done========================================================="
-
+pause
+exit 0
 
 echo "===============Building With test Libraries========================================================="
 b2 ^
