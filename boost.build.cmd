@@ -34,9 +34,9 @@ set IncludeDir=%BOOST_TARGET_ROOT%\include
 set LibDir=%BOOST_TARGET_ROOT%\lib
 set BOOST_THEADING=multi
 rem https://stackoverflow.com/questions/7508369/boost-libs-building-difference-between-runtime-link-and-link-options
-set BOOST_RUNTIME_LINK=static
+set BOOST_RUNTIME_LINK=shared
 rem (static|shared)
-set BOOST_LINK=static
+set BOOST_LINK=shared
 
 
 if "%BOOST_LINK%"=="static" (
