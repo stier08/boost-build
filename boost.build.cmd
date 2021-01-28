@@ -1,10 +1,10 @@
 rem https://stackoverflow.com/questions/2715164/how-can-i-decode-the-boost-library-naming
-set PYTHONHOME=%PORTABLE_APP_HOME%Winpython32-3.8.7.0dot\python-3.8.7
+set PYTHONHOME=%PORTABLE_WS_APP_HOME%Winpython32-3.8.7.0dot\python-3.8.7
 rem set PYTHONHOME=P:\WinPython-32bit-3.4.4.7Zero\python-3.4.4
 set PATH=%PYTHONHOME%;%PYTHONHOME%\Scripts;%PATH%
 rem set PATH=D:\Python34;D:\Python34\Scripts;%PATH%
 
-set VS140COMNTOOLS=C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\Tools\
+set VS160COMNTOOLS=C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\Tools\
 
 rem http://www.boost.org/build/doc/html/bbv2/overview/invocation.html
 set BOOST_ROOT=E:\LIBS\boost\boost-1_75_0_vs2019_wp38
@@ -17,7 +17,7 @@ SET BOOST_ADDRESS_MODEL=32
 python -c "from sys import *; print('version=%d.%d\nplatform=%s\nprefix=%s\nexec_prefix=%s\nexecutable=%s' % (version_info[0],version_info[1],platform,prefix,exec_prefix,executable))" 2>&1
 
 
-call "%VS140COMNTOOLS%..\..\VC\Auxiliary\Build\vcvars32.bat"
+call "%VS160COMNTOOLS%..\..\VC\Auxiliary\Build\vcvars32.bat"
 cd /d %BOOST_ROOT%
 
 if exist b2.exe (
@@ -34,9 +34,9 @@ set IncludeDir=%BOOST_TARGET_ROOT%\include
 set LibDir=%BOOST_TARGET_ROOT%\lib
 set BOOST_THEADING=multi
 rem https://stackoverflow.com/questions/7508369/boost-libs-building-difference-between-runtime-link-and-link-options
-set BOOST_RUNTIME_LINK=shared
+set BOOST_RUNTIME_LINK=static
 rem (static|shared)
-set BOOST_LINK=shared
+set BOOST_LINK=static
 
 
 if "%BOOST_LINK%"=="static" (
@@ -68,6 +68,7 @@ b2 ^
 
 echo "===============Python Libraries Done========================================================="
 
+
 echo "===============Building With test Libraries========================================================="
 b2 ^
   --build-dir=%BuildDir% ^
@@ -86,7 +87,7 @@ b2 ^
   %B2_DEFINES% ^
   stage install
 
-goto exitlabel
+
 
 echo "===============Building With regex Libraries========================================================="
 
