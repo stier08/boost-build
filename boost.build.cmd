@@ -1,5 +1,5 @@
 rem https://stackoverflow.com/questions/2715164/how-can-i-decode-the-boost-library-naming
-set PYTHONHOME=%PORTABLE_APP_HOME%WinPython-32bit-3.7.1.0\python-3.7.1
+set PYTHONHOME=%PORTABLE_APP_HOME%Winpython32-3.8.7.0dot\python-3.8.7
 rem set PYTHONHOME=P:\WinPython-32bit-3.4.4.7Zero\python-3.4.4
 set PATH=%PYTHONHOME%;%PYTHONHOME%\Scripts;%PATH%
 rem set PATH=D:\Python34;D:\Python34\Scripts;%PATH%
@@ -7,7 +7,7 @@ rem set PATH=D:\Python34;D:\Python34\Scripts;%PATH%
 set VS140COMNTOOLS=C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\Tools\
 
 rem http://www.boost.org/build/doc/html/bbv2/overview/invocation.html
-set BOOST_ROOT=D:\LIBS\boost\boost-1_68_0_vs2015_wp37
+set BOOST_ROOT=E:\LIBS\boost\boost-1_75_0_vs2019_wp38
 set BOOST_BUILD_ROOT=%BOOST_ROOT%
 set BOOST_TARGET_ROOT=%BOOST_ROOT%
 set BOOST_BUILD_CONFIG=
@@ -27,7 +27,7 @@ echo "b2.exe exists"
 )
 rem call bootstrap.bat
 
-set vsMainVersion=14.0
+set vsMainVersion=14.2
 set BuildDir=%BOOST_BUILD_ROOT%\build
 set PrefixDir=%BOOST_TARGET_ROOT%
 set IncludeDir=%BOOST_TARGET_ROOT%\include
