@@ -7,7 +7,7 @@ rem set PATH=D:\Python34;D:\Python34\Scripts;%PATH%
 set VS160COMNTOOLS=C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\Tools\
 
 rem http://www.boost.org/build/doc/html/bbv2/overview/invocation.html
-set BOOST_ROOT=E:\LIBS\boost\boost-1_75_0_vs2019_toolset_v142_wp38
+set BOOST_ROOT=E:\LIBS\boost\boost-1_75_0_vs2019_toolset_v140_wp38
 set BOOST_BUILD_ROOT=%BOOST_ROOT%
 set BOOST_TARGET_ROOT=%BOOST_ROOT%
 set BOOST_BUILD_CONFIG=
@@ -27,7 +27,7 @@ echo "b2.exe exists"
 )
 rem call bootstrap.bat
 
-set vsMainVersion=14.2
+set vsMainVersion=14.0
 set BuildDir=%BOOST_BUILD_ROOT%\build
 set PrefixDir=%BOOST_TARGET_ROOT%
 set IncludeDir=%BOOST_TARGET_ROOT%\include
