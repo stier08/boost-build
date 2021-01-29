@@ -1,5 +1,5 @@
 rem https://stackoverflow.com/questions/2715164/how-can-i-decode-the-boost-library-naming
-set PYTHONHOME=%PORTABLE_WS_APP_HOME%Winpython32-3.7.7.1dot\python-3.7.7
+set PYTHONHOME=%PORTABLE_WS_APP_HOME%Winpython32-3.8.7.0dot\python-3.8.7
 rem set PYTHONHOME=P:\WinPython-32bit-3.4.4.7Zero\python-3.4.4
 set PATH=%PYTHONHOME%;%PYTHONHOME%\Scripts;%PATH%
 rem set PATH=D:\Python34;D:\Python34\Scripts;%PATH%
@@ -7,7 +7,7 @@ rem set PATH=D:\Python34;D:\Python34\Scripts;%PATH%
 set VS160COMNTOOLS=C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\Tools\
 
 rem http://www.boost.org/build/doc/html/bbv2/overview/invocation.html
-set BOOST_ROOT=E:\LIBS\boost\boost-1_75_0_vs2019_toolset_v140_wp37
+set BOOST_ROOT=E:\LIBS\boost\boost-1_68_0_vs2019_toolset_v140_wp38
 set BOOST_BUILD_ROOT=%BOOST_ROOT%
 set BOOST_TARGET_ROOT=%BOOST_ROOT%
 set BOOST_BUILD_CONFIG=
