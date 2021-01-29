@@ -27,16 +27,16 @@ echo "b2.exe exists"
 )
 rem call bootstrap.bat
 
-set vsMainVersion=14.0
+set vsMainVersion=14.2
 set BuildDir=%BOOST_BUILD_ROOT%\build
 set PrefixDir=%BOOST_TARGET_ROOT%
 set IncludeDir=%BOOST_TARGET_ROOT%\include
 set LibDir=%BOOST_TARGET_ROOT%\lib
 set BOOST_THEADING=multi
 rem https://stackoverflow.com/questions/7508369/boost-libs-building-difference-between-runtime-link-and-link-options
-set BOOST_RUNTIME_LINK=shared
+set BOOST_RUNTIME_LINK=static
 rem (static|shared)
-set BOOST_LINK=shared
+set BOOST_LINK=static
 
 
 if "%BOOST_LINK%"=="static" (
