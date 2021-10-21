@@ -1,5 +1,5 @@
 rem https://stackoverflow.com/questions/2715164/how-can-i-decode-the-boost-library-naming
-set PYTHONHOME=%PORTABLE_WS_APP_HOME%Winpython32-3.8.7.0dot\python-3.8.7
+set PYTHONHOME=%PORTABLE_WS_APP_HOME%\Winpython64-3.8.7.0dot\python-3.8.7.amd64
 rem set PYTHONHOME=P:\WinPython-32bit-3.4.4.7Zero\python-3.4.4
 set PATH=%PYTHONHOME%;%PYTHONHOME%\Scripts;%PATH%
 rem set PATH=D:\Python34;D:\Python34\Scripts;%PATH%
@@ -13,7 +13,7 @@ set BOOST_TARGET_ROOT=%BOOST_ROOT%
 set BOOST_BUILD_CONFIG=
 set BOOST_BUILD_CONFIG=--debug-configuration  --debug-building --debug-generators -d 2
 SET BOOST_ARCHITECTURE=x86
-SET BOOST_ADDRESS_MODEL=32
+SET BOOST_ADDRESS_MODEL=64
 python -c "from sys import *; print('version=%d.%d\nplatform=%s\nprefix=%s\nexec_prefix=%s\nexecutable=%s' % (version_info[0],version_info[1],platform,prefix,exec_prefix,executable))" 2>&1
 
 
