@@ -4,7 +4,9 @@ rem set PYTHONHOME=P:\WinPython-32bit-3.4.4.7Zero\python-3.4.4
 set PATH=%PYTHONHOME%;%PYTHONHOME%\Scripts;%PATH%
 rem set PATH=D:\Python34;D:\Python34\Scripts;%PATH%
 
-set VS160COMNTOOLS=C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\Tools\
+set VS140COMNTOOLS=C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\Tools\
+set VS170COMNTOOLS=c:\Program Files\Microsoft Visual Studio\2022\Preview\Common7\Tools\
+set VS160COMNTOOLS=c:\Program Files\Microsoft Visual Studio\2022\Preview\Common7\Tools\
 
 rem http://www.boost.org/build/doc/html/bbv2/overview/invocation.html
 set BOOST_ROOT=E:\LIBS\boost\boost-1_80_0_vs2019_toolset_v140_wp38
@@ -17,7 +19,7 @@ SET BOOST_ADDRESS_MODEL=64
 python -c "from sys import *; print('version=%d.%d\nplatform=%s\nprefix=%s\nexec_prefix=%s\nexecutable=%s' % (version_info[0],version_info[1],platform,prefix,exec_prefix,executable))" 2>&1
 
 
-call "%VS160COMNTOOLS%..\..\VC\Auxiliary\Build\vcvars32.bat"
+call "%VS170COMNTOOLS%..\..\VC\Auxiliary\Build\vcvars32.bat"
 cd /d %BOOST_ROOT%
 
 if exist b2.exe (
@@ -27,7 +29,7 @@ echo "b2.exe exists"
 )
 rem call bootstrap.bat
 
-set vsMainVersion=14.0
+set vsMainVersion=14.3
 set BuildDir=%BOOST_BUILD_ROOT%\build
 set PrefixDir=%BOOST_TARGET_ROOT%
 set IncludeDir=%BOOST_TARGET_ROOT%\include
